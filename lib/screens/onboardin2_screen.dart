@@ -18,7 +18,14 @@ class OnBoarding2WidgetState extends State<OnBoarding2Widget> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Image(image: AssetImage(onboarding2)),
+          Container(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height * .6,
+            child: Image(
+              image: AssetImage(onboarding2),
+              fit: BoxFit.cover,
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
             child: Column(
@@ -33,7 +40,7 @@ class OnBoarding2WidgetState extends State<OnBoarding2Widget> {
                   'Every day we are getting better due to your ratings \nand reviews — that helps us protect your accounts.',
                   style: opacityStyle,
                 ),
-                SizedBox(height: 100),
+                SizedBox(height: 80),
                 GestureDetector(
                   onTap: () {
                     Navigator.of(context).pushReplacementNamed('/main');

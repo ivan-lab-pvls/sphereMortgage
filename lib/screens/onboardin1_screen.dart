@@ -18,7 +18,13 @@ class OnBoarding1WidgetState extends State<OnBoarding1Widget> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Image(image: AssetImage(onboarding1)),
+          Container(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height * .6,
+              child: Image(
+                image: AssetImage(onboarding1),
+                fit: BoxFit.cover,
+              )),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
             child: Column(
@@ -33,7 +39,7 @@ class OnBoarding1WidgetState extends State<OnBoarding1Widget> {
                   'Visualize your mortgage path with our interactive  \ntools. See how different scenarios, interest rates, and \ndown payments impact your mortgage',
                   style: opacityStyle,
                 ),
-                SizedBox(height: 100),
+                SizedBox(height: 80),
                 GestureDetector(
                   onTap: () {
                     Navigator.of(context).pushReplacementNamed('/onboard2');
